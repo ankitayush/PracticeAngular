@@ -1,0 +1,44 @@
+<p>Login works!</p>
+<table>
+    <tr>
+        <td>Login Username</td>
+        <td><input type="text" [(ngModel)]="id" name="loginusername"></td>
+    </tr>
+    <tr>
+        <td>Login Password</td>
+         <td><input type="password" [(ngModel)]="password" name="loginpassword"> </td>
+    </tr>
+    <tr>
+        <td>Select Role</td>
+        <td><select [(ngModel)]="userrole"name="" id="">
+            <option value="admin">Admin</option>
+            <option value="user">User</option>
+        </select></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button (click)="loginbuttonClicked()">Submit</button></td>
+    </tr>
+
+    <span [style]="spanStyle">{{errormsg}}</span>
+</table>
+
+
+
+<hr>
+<br>
+<!-- Today {{td}}
+<br>
+Text Messages-> {{txt1}} {{txt2}} {{txt3}}
+<br>
+
+<b>Fruits List</b>
+<br>
+<ul>
+    <li *ngFor="let f of myArr">
+        {{f}}
+
+    </li>
+</ul>
+
+Object Data-> {{product.prodid}} -->

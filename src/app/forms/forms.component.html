@@ -1,0 +1,37 @@
+<p>forms works!</p>
+<br><br>
+
+<form action="" #prodForm="ngForm"(ngSubmit)=saveProduct(prodForm)>
+    <table>
+        <tr>
+            <td>
+                <label for="prodid" >Prod ID</label>
+            </td>
+            <td>
+                <input type="text" name="prodid" ngModel>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="prodname" >Prod NAME</label>
+            </td>
+            <td>
+                <input type="text" name="prodname" ngModel>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="prodprice" >Prod PRICE</label>
+            </td>
+            <td>
+                <input type="text" name="prodprice" ngModel>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <button>Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,64 @@
+<p>itemlist works!</p>
+
+List Box 1
+<br><br>
+<select [(ngModel)]="selecteditem" size="5" name="" id="">
+    <option  *ngFor ="let p of myarr">{{p}}</option>
+</select>
+
+<button (click)="onClick()">Add</button>
+<br><br>
+
+<select name="" id="">
+    <option *ngFor="let p of mynewarr">{{p}}</option>
+</select>
+
+<br><br><br><br>
+<ul>
+    <li *ngFor="let c of myarr">
+        <ng-container *ngIf="(c=='Audi'||c=='BMW');else ElseWhat">
+            {{c}} is costly
+        </ng-container>
+        <ng-template #ElseWhat>
+            {{c}} is good
+        </ng-template>
+    </li>
+</ul>
+
+<br><br><br><br>
+
+<label for="Payment">Mode of Payment</label><br><br>
+<input type="radio" [(ngModel)]="payment" name="payment" value="card">Card Payment <br><br>
+<input type="radio" [(ngModel)]="payment" name="payment" value="net">Net Banking <br><br>
+
+
+<ng-container *ngIf="(payment=='card');else elseWhat">
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    Card Number
+                </td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Expiry Date
+                </td>
+                <td>
+                    <input type="date">
+                </td>
+            </tr>
+        </table>
+    </form>
+</ng-container>
+<ng-template #elseWhat>
+    <ng-container *ngIf="(payment=='net');">
+    <select [(ngModel)]="selectedbank" size="5" name="" id="">
+        <option  *ngFor ="let p of banks">{{p}}</option>
+    </select>
+    
+</ng-container>
+</ng-template>

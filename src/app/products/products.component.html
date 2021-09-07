@@ -1,0 +1,20 @@
+<p>products works!</p>
+<hr>
+<br><br>
+<div [class]="mystyle">
+  Sample div for property binding...
+</div>
+<br><br>
+Dropdown List
+<label for="Products">Choose a product:</label>
+<select name="products" id="products">
+  <option *ngFor="let f of productsArr"> {{f}}
+</option>
+</select>
+
+<br><br>
+Radio Button 
+<div *ngFor="let f of productsArr">
+    <input type="radio" name="product"> {{f}}
+
+</div>
