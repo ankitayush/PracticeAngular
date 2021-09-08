@@ -10,6 +10,7 @@ import { TaskComponent } from './task/task.component';
 import { FormsModule } from '@angular/forms';
 import { ItemlistComponent } from './itemlist/itemlist.component';
 import { FormsComponent } from './forms/forms.component';
+import { MyproductComponent } from './myproduct/myproduct.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { FormsComponent } from './forms/forms.component';
     ProductsComponent,
     TaskComponent,
     ItemlistComponent,
-    FormsComponent
+    FormsComponent,
+    MyproductComponent
   ],
   imports: [
     BrowserModule,

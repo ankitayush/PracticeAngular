@@ -1,0 +1,91 @@
+<p>myproduct works!</p>
+
+<br><br>
+
+<form action="" #prodForm="ngForm"(ngSubmit)=saveProduct(prodForm)>
+    <table>
+        <tr>
+            <td>
+                <label for="prodid" >Prod ID</label>
+            </td>
+            <td>
+                <input type="text" name="prodid" ngModel>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="prodname" >Prod NAME</label>
+            </td>
+            <td>
+                <input type="text" name="prodname" ngModel>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="price" >Prod PRICE</label>
+            </td>
+            <td>
+                <input type="text" name="price" ngModel>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                 <label for="category" >Category</label>
+            </td>
+            <td>
+                <select name="category" id="" ngModel>
+                    <option *ngFor="let f of categories"> {{f}}
+                    </option>
+                </select>
+            </td>
+        </tr>
+        <br>
+        <tr>
+            <td></td>
+            <td>
+                <button>Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+
+<br><br><br><br>
+
+<table>
+    <tr class="tableheader">
+        <td>
+            Product Id 
+        </td>
+        <td>
+            Product Name
+        </td>
+        <td>
+            Price
+        </td>
+        <td>
+            Category
+        </td>
+        <td>
+            Action
+        </td>
+    </tr>
+    <tr *ngFor="let data of productArr">
+        <td>
+            {{data.prodid}}
+        </td>
+        <td>
+            {{data.prodname}}
+        </td>
+        <td>
+            {{data.price}}
+        </td>
+        <td>
+            {{data.category}}
+        </td>
+        <td>
+            <button (click)="itemDelete(data.prodid)">Delete</button>
+        </td>
+
+    </tr>
+</table>
