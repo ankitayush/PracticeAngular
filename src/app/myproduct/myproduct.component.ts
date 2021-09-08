@@ -24,9 +24,8 @@ export class MyproductComponent implements OnInit {
     
   }
 
-   itemDelete(prodid:any){
-   var index=this.productArr.indexOf(prodid);
-    this.productArr.splice(index,1);
+   itemDelete(i:any){
+    this.productArr.splice(i,1);
    }
 
   ngOnInit(): void {

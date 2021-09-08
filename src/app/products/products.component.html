@@ -1,20 +1,52 @@
-<p>products works!</p>
+<p>learn reactive form works!</p>
 <hr>
 <br><br>
-<div [class]="mystyle">
-  Sample div for property binding...
-</div>
-<br><br>
-Dropdown List
-<label for="Products">Choose a product:</label>
-<select name="products" id="products">
-  <option *ngFor="let f of productsArr"> {{f}}
-</option>
-</select>
 
-<br><br>
-Radio Button 
-<div *ngFor="let f of productsArr">
-    <input type="radio" name="product"> {{f}}
+<form action="" [formGroup]="prodForm"(ngSubmit)=saveData()>
+  <table>
+      <tr>
+          <td>
+              <label for="prodid" >Prod ID</label>
+          </td>
+          <td>
+              <input type="text" name="productid" formControlName="prodid">
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <label for="prodname" >Prod NAME</label>
+          </td>
+          <td>
+              <input type="text" name="productname" formControlName="prodname">
+          </td>
+      </tr>
+      <tr>
+          <td>
+              <label for="price" >Prod PRICE</label>
+          </td>
+          <td>
+              <input type="text" name="price" formControlName="price">
+          </td>
+      </tr>
+      
+      <tr>
+          <td>
+               <label for="category" >Category</label>
+          </td>
+          <td>
+              <select name="category" id="" formControlName="category">
+                  <option *ngFor="let f of categories"> {{f}}
+                  </option>
+              </select>
+          </td>
+      </tr>
+      <br>
+      <tr>
+          <td></td>
+          <td>
+              <button [disabled]="!prodForm.valid">Submit</button>
+          </td>
+      </tr>
+  </table>
+</form>
 
-</div>

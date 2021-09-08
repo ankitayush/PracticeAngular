@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { ItemlistComponent } from './itemlist/itemlist.component';
 import { FormsComponent } from './forms/forms.component';
 import { MyproductComponent } from './myproduct/myproduct.component';
+import { ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import { MyproductComponent } from './myproduct/myproduct.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

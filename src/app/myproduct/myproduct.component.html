@@ -9,7 +9,7 @@
                 <label for="prodid" >Prod ID</label>
             </td>
             <td>
-                <input type="text" name="prodid" ngModel>
+                <input type="text" name="prodid" ngModel required>
             </td>
         </tr>
         <tr>
@@ -17,7 +17,7 @@
                 <label for="prodname" >Prod NAME</label>
             </td>
             <td>
-                <input type="text" name="prodname" ngModel>
+                <input type="text" name="prodname" ngModel required minlength="2" maxlength="10" pattern="^[a-zA-Z]+$">
             </td>
         </tr>
         <tr>
@@ -34,7 +34,7 @@
                  <label for="category" >Category</label>
             </td>
             <td>
-                <select name="category" id="" ngModel>
+                <select name="category" id="" required ngModel>
                     <option *ngFor="let f of categories"> {{f}}
                     </option>
                 </select>
@@ -44,7 +44,7 @@
         <tr>
             <td></td>
             <td>
-                <button>Submit</button>
+                <button [disabled]="!prodForm.valid">Submit</button>
             </td>
         </tr>
     </table>
@@ -70,7 +70,7 @@
             Action
         </td>
     </tr>
-    <tr *ngFor="let data of productArr">
+    <tr *ngFor="let data of productArr let i = index">
         <td>
             {{data.prodid}}
         </td>
@@ -84,8 +84,26 @@
             {{data.category}}
         </td>
         <td>
-            <button (click)="itemDelete(data.prodid)">Delete</button>
+            <button (click)="itemDelete(i)">Delete</button>
         </td>
 
     </tr>
 </table>
+
+<div>
+    <h3>
+        Form Attributes
+    </h3>
+    <pre>
+        Values:{{prodForm.value|json}}
+    </pre>
+    <pre>
+        Form Valid:{{prodForm.valid}}
+    </pre>
+    <pre>
+        Form Invalid:{{prodForm.invalid}}
+    </pre>
+    <pre>
+        If form touched:{{prodForm.touched}}
+    </pre>
+</div>
